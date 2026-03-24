@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FlorandoSur — Inventario</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="../index.html" class="nav-logo"><span>Florando</span>Sur</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Dashboard</a></li>
+      <li><a href="inventario.html" class="active">Inventario</a></li>
+      <li><a href="clientes.html">Clientes</a></li>
+      <li><a href="ventas.html">Ventas</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+
+    <div class="page-header">
+      <h1 class="page-title">Inventario</h1>
+      <button class="btn btn-primary" onclick="abrirModalAgregar()">
+        + Nuevo producto
+      </button>
+    </div>
+
+    <div class="card">
+      <!-- Buscador y filtro -->
+      <div class="search-bar">
+        <input
+          type="text"
+          id="buscador"
+          placeholder="Buscar producto..."
+          oninput="renderTabla()"
+        />
+        <select
+          id="filtro-categoria"
+          onchange="renderTabla()"
+          style="padding:9px 13px; border:1.5px solid var(--border);
+                 border-radius:var(--radius-sm); font-family:inherit;
+                 font-size:14px; outline:none; background:var(--surface); color:#fff;"
+        >
+          <option value="">Todas las categorías</option>
+          <option value="Pod">Pod</option>
+          <option value="Desechable">Desechable</option>
+          <option value="Líquido">Líquido</option>
+          <option value="Accesorio">Accesorio</option>
+          <option value="Otro">Otro</option>
+        </select>
+      </div>
+
+      <!-- Tabla -->
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Producto</th>
+              <th>Categoría</th>
+              <th>Precio venta</th>
+              <th>Precio costo</th>
+              <th>Stock</th>
+              <th>Estado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tabla-inventario">
+            <tr>
+              <td colspan="7" class="empty-state" style="text-align:center; padding:24px">
+                Cargando...
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ── Modal agregar / editar producto ── -->
+  <div class="modal-overlay" id="modal-producto">
+    <div class="modal">
+
+      <div class="modal-header">
+        <h2 class="modal-title" id="modal-titulo">Nuevo producto</h2>
+        <button class="modal-close" onclick="cerrarModal()">✕</button>
+      </div>
+
+      <!-- Campo oculto para guardar el id cuando editamos -->
+      <input type="hidden" id="prod-id" />
+
+      <div class="form-group">
+        <label>Nombre del producto *</label>
+        <input type="text" id="prod-nombre" placeholder="Ej: Elf Bar 5000 Sandía" />
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Categoría *</label>
+          <select id="prod-categoria">
+            <option value="">Seleccioná...</option>
+            <option>Pod</option>
+            <option>Desechable</option>
+            <option>Líquido</option>
+            <option>Accesorio</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Stock actual *</label>
+          <input type="number" id="prod-stock" placeholder="0" min="0" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Precio de venta ($) *</label>
+          <input type="number" id="prod-precio" placeholder="0" min="0" />
+        </div>
+        <div class="form-group">
+          <label>Precio de costo ($)</label>
+          <input type="number" id="prod-costo" placeholder="0" min="0" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Descripción / notas</label>
+        <textarea id="prod-descripcion" rows="2"
+          placeholder="Sabor, marca, modelo..."></textarea>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-outline" onclick="cerrarModal()">Cancelar</button>
+        <button class="btn btn-primary" onclick="guardarProducto()">Guardar producto</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="../js/storage.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/inventario.js"></script>
+</body>
+</html>

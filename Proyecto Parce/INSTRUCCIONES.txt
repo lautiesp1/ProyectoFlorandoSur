@@ -1,0 +1,168 @@
+═══════════════════════════════════════════════════════════════
+                    VapeManager - Instrucciones de Uso
+═══════════════════════════════════════════════════════════════
+
+📋 ¿QUÉ ES?
+VapeManager es una plataforma web para gestionar inventario, clientes y ventas 
+de una tienda de vapeadores. Funciona 100% offline (sin necesidad de internet).
+
+═══════════════════════════════════════════════════════════════
+
+📦 CÓMO ENTREGAR LA PÁGINA:
+
+OPCIÓN 1 - LA MÁS SIMPLE (RECOMENDADA):
+═════════════════════════════════════════
+
+1. Copia la carpeta completa "Proyecto Parce" a una USB o Dropbox
+2. Tu amigo SOLO necesita:
+   - Descargar la carpeta
+   - Hacer doble clic en "index.html"
+   - ¡Listo! Se abre en el navegador
+
+NO NECESITA:
+❌ Internet
+❌ Servidor
+❌ Instalar nada
+❌ Conocimientos técnicos
+
+
+OPCIÓN 2 - MEDIANTE EMAIL/DRIVE:
+═════════════════════════════════
+
+1. Comprime la carpeta en un .zip
+2. Envía por email o Google Drive
+3. Tu amigo extrae el .zip
+4. Hace doble clic en "index.html"
+
+
+OPCIÓN 3 - COMPARTIR EN LA NUBE (MEJOR PARA ACCESO REMOTO):
+═══════════════════════════════════════════════════════════
+
+A) GITHUB PAGES (GRATIS):
+   - Crea cuenta en github.com
+   - Crea repositorio público
+   - Sube la carpeta
+   - Activa GitHub Pages en settings
+   - Comparte el link con tu amigo
+
+B) NETLIFY (GRATIS Y FÁCIL):
+   - Ve a netlify.com
+   - Arrastra la carpeta ("Drag and drop")
+   - Te da un link automático
+   - Comparte ese link con tu amigo
+
+
+═══════════════════════════════════════════════════════════════
+
+🚀 CÓMO USAR LA PÁGINA:
+
+1. DASHBOARD (Página de inicio):
+   - Ver resumen de ventas del día
+   - Stock bajo
+   - Últimas ventas
+   - Productos más vendidos
+
+2. INVENTARIO:
+   - Agregar productos
+   - Editar precios y stock
+   - Buscar productos
+   - Filtrar por categoría
+
+3. CLIENTES:
+   - Registrar nuevos clientes
+   - Ver historial de compras
+   - Información de contacto
+   - WhatsApp integrado
+
+4. VENTAS:
+   - Registrar nuevas ventas
+   - Seleccionar cliente y productos
+   - Calcular total automáticamente
+   - Ver historial de ventas
+
+
+═══════════════════════════════════════════════════════════════
+
+💾 DATOS:
+
+Los datos se guardan en el navegador (localStorage):
+✓ Cuando cierras la página, los datos se mantienen
+✓ Si cambias de navegador, pierdes los datos
+✓ Si limpias caché, pierdes los datos
+
+RECOMENDACIÓN:
+- Usa siempre el MISMO navegador
+- En la misma computadora
+- No limpies caché frecuentemente
+
+
+═══════════════════════════════════════════════════════════════
+
+🔧 ESTRUCTURA DE ARCHIVOS:
+
+Proyecto Parce/
+├── index.html              ← ABRIR ESTO
+├── pages/
+│   ├── inventario.html
+│   ├── clientes.html
+│   └── ventas.html
+├── css/
+│   └── styles.css
+├── js/
+│   ├── app.js
+│   ├── clientes.js
+│   ├── inventario.js
+│   ├── ventas.js
+│   ├── storage.js
+│   └── ui.js
+└── INSTRUCCIONES.txt       ← ESTE ARCHIVO
+
+
+═══════════════════════════════════════════════════════════════
+
+❓ PREGUNTAS FRECUENTES:
+
+P: ¿Necesita internet?
+R: NO. Funciona 100% offline. Solo necesita navegador.
+
+P: ¿Qué navegadores funcionan?
+R: Chrome, Firefox, Edge, Safari (cualquier navegador moderno)
+
+P: ¿Se puede usar en móvil?
+R: Sí, abre index.html en el navegador del móvil
+
+P: ¿Los datos se pierden si reinicio la PC?
+R: NO. Los datos quedan guardados en el navegador.
+
+P: ¿Puedo compartir la base de datos con otro usuario?
+R: No directamente. Cada navegador tiene su propia base de datos.
+
+P: ¿Cómo backup de los datos?
+R: Aún no está implementado. Todos los datos están en localStorage.
+
+
+═══════════════════════════════════════════════════════════════
+
+🎨 COLORES DE LA INTERFAZ:
+
+La página usa colores neón/vibrantes inspired en "Florando El Sur":
+- Rosa/Magenta
+- Verde lima
+- Naranja
+- Amarillo dorado
+
+
+═══════════════════════════════════════════════════════════════
+
+📝 NOTAS FINALES:
+
+✓ La página es responsive (funciona en móvil también)
+✓ Todos los datos se guardan automáticamente
+✓ No hay contraseñas (añadir seguridad en el futuro)
+✓ Interfaz intuitiva y fácil de usar
+
+
+¡Que disfrutes VapeManager! 🚀
+
+
+═══════════════════════════════════════════════════════════════
