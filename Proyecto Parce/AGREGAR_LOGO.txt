@@ -1,0 +1,33 @@
+📁 INSTRUCCIONES PARA AGREGAR EL LOGO
+════════════════════════════════════════════════════════════════
+
+1. DESCARGAR LA IMAGEN:
+   - La imagen adjunta del logo de "Florando El Sur" debe descargarse
+   - O cópiala desde donde la tengas guardada
+
+2. GUARDAR EN LA CARPETA CORRECTA:
+   - Navega a: Proyecto Parce/assets/
+   - Coloca la imagen dentro de esa carpeta
+   - RENÓMBRALA como: logo.png
+   
+   El archivo debe quedar en esta ruta exacta:
+   → Proyecto Parce/assets/logo.png
+
+3. VERIFICAR:
+   - Abre index.html en el navegador
+   - Si la imagen aparece en el dashboard, ¡está bien!
+   - Si aparece un icono de imagen roto, revisa que:
+     • El archivo esté en Proyecto Parce/assets/
+     • Se llame exactamente "logo.png"
+     • Sea una imagen PNG o JPG
+
+════════════════════════════════════════════════════════════════
+
+CAMBIOS REALIZADOS:
+✅ Logo cambiado de emoji a imagen
+✅ "VapeManager" cambiado a "FlorandoSur"
+✅ Botones ahora con texto BLANCO para mejor contraste
+✅ Badges con contraste mejorado
+✅ Título del navegador actualizado en todas las páginas
+
+════════════════════════════════════════════════════════════════

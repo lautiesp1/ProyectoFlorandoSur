@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FlorandoSur — Ventas</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="../index.html" class="nav-logo"><span>Florando</span>Sur</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Dashboard</a></li>
+      <li><a href="inventario.html">Inventario</a></li>
+      <li><a href="clientes.html">Clientes</a></li>
+      <li><a href="ventas.html" class="active">Ventas</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+
+    <div class="page-header">
+      <h1 class="page-title">Ventas</h1>
+      <button class="btn btn-primary" onclick="abrirModalVenta()">
+        + Registrar venta
+      </button>
+    </div>
+
+    <!-- Filtros -->
+    <div class="card" style="margin-bottom:1rem">
+      <div class="search-bar" style="margin-bottom:0">
+        <input
+          type="text"
+          id="buscador"
+          placeholder="Buscar por nombre de cliente..."
+          oninput="renderTabla()"
+        />
+        <input
+          type="date"
+          id="filtro-fecha"
+          onchange="renderTabla()"
+          style="padding:9px 13px; border:1.5px solid var(--border);
+                 border-radius:var(--radius-sm); font-family:inherit;
+                 font-size:14px; outline:none; background:var(--surface); color:#fff;"
+        />
+        <button class="btn btn-outline btn-sm" onclick="limpiarFiltros()">
+          Limpiar
+        </button>
+      </div>
+    </div>
+
+    <!-- Tabla -->
+    <div class="card">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Cliente</th>
+              <th>Productos</th>
+              <th>Unidades</th>
+              <th>Método de pago</th>
+              <th>Total</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tabla-ventas">
+            <tr>
+              <td colspan="7" class="empty-state"
+                style="text-align:center; padding:24px">
+                Cargando...
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- Resumen del total filtrado -->
+      <div id="resumen-total"
+        style="text-align:right; margin-top:1rem;
+               font-size:14px; color:var(--muted)">
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ── Modal registrar nueva venta ── -->
+  <div class="modal-overlay" id="modal-venta">
+    <div class="modal" style="max-width:520px">
+
+      <div class="modal-header">
+        <h2 class="modal-title">Registrar venta</h2>
+        <button class="modal-close" onclick="cerrarModalVenta()">✕</button>
+      </div>
+
+      <div class="form-group">
+        <label>Cliente *</label>
+        <select id="venta-cliente">
+          <option value="">Seleccioná un cliente...</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Productos *</label>
+        <!-- Las filas de productos se agregan dinámicamente acá -->
+        <div id="productos-filas" class="prod-selector"></div>
+        <button class="btn btn-outline btn-sm"
+          onclick="agregarFila()" style="margin-top:4px">
+          + Agregar producto
+        </button>
+      </div>
+
+      <div class="form-group">
+        <label>Método de pago</label>
+        <select id="venta-pago">
+          <option>Efectivo</option>
+          <option>Transferencia</option>
+          <option>Tarjeta débito</option>
+          <option>Tarjeta crédito</option>
+          <option>MercadoPago</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Notas</label>
+        <input type="text" id="venta-notas"
+          placeholder="Ej: entrega a domicilio, debe el vuelto..." />
+      </div>
+
+      <!-- Total calculado en tiempo real -->
+      <div class="venta-total" id="venta-total-display">Total: $0</div>
+
+      <div class="modal-footer">
+        <button class="btn btn-outline" onclick="cerrarModalVenta()">
+          Cancelar
+        </button>
+        <button class="btn btn-primary" onclick="guardarVenta()">
+          Confirmar venta
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── Modal detalle de venta ── -->
+  <div class="modal-overlay" id="modal-detalle">
+    <div class="modal">
+
+      <div class="modal-header">
+        <h2 class="modal-title">Detalle de venta</h2>
+        <button class="modal-close" onclick="cerrarModal('modal-detalle')">✕</button>
+      </div>
+
+      <div id="detalle-contenido"></div>
+
+      <div class="modal-footer">
+        <button class="btn btn-outline" onclick="cerrarModal('modal-detalle')">
+          Cerrar
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="../js/storage.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/ventas.js"></script>
+</body>
+</html>
